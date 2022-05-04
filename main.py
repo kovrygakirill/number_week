@@ -1,5 +1,4 @@
 from datetime import date, datetime
-import time
 
 START_DATE = datetime.strptime(f"2019/01/01", '%Y/%m/%d').date()
 SUNDAY = 7
@@ -25,10 +24,8 @@ def weeks_full_years(start_year: int, end_year: int):
 
 
 if __name__ == '__main__':
-    while True:
-        try:
-            end_date = date.today()
-            print(weeks_between_dates(start_date=START_DATE, end_date=end_date))
-            time.sleep(60 * 10)
-        except Exception as e:
-            print(e)
+    try:
+        end_date = date.today()
+        print(weeks_between_dates(start_date=START_DATE, end_date=end_date))
+    except Exception as e:
+        print(e)
